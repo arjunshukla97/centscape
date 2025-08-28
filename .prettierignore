@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+ios/build/
+android/app/build/
+.expo/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+
+# Misc
+*.lock
+*.min.js
+*.bundle
+*.tgz
+*.snap
+coverage/
+.vscode/
+.idea/
+.DS_Store

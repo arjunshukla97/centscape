@@ -1,0 +1,36 @@
+{
+  "name": "centscape",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "npx expo start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "start:dev-client": "npx expo start --dev-client",
+    "android": "npx expo run:android",
+    "ios": "npx expo run:ios",
+    "web": "npx expo start --web",
+    "expo:install": "npx expo install",
+    "android:build": "eas build --platform android --profile development",
+    "android:build:local": "eas build --platform android --profile development --local"
+  },
+  "dependencies": {
+    "@nozbe/watermelondb": "^0.28.0",
+    "axios": "^1.11.0",
+    "expo": "~53.0.22",
+    "expo-clipboard": "~7.1.5",
+    "expo-linking": "~7.1.7",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-native": "0.79.6",
+    "react-native-quick-sqlite": "^8.2.7",
+    "react-native-toast-message": "^2.3.3",
+    "expo-dev-client": "~5.2.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@types/react": "~19.0.10",
+    "typescript": "~5.8.3"
+  },
+  "private": true
+}

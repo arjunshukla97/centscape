@@ -1,0 +1,36 @@
+{
+  "name": "centscape",
+  "version": "1.0.0",
+  "scripts": {
+    "verify": "npm run typecheck && npm run lint && npm run test",
+    "dev": "npm --prefix server run dev",
+    "test": "npm --prefix server run test",
+    "start:app": "npm --prefix app run start",
+    "start:app:client": "npm --prefix app run start:dev-client",
+    "typecheck": "npm --prefix app run typecheck",
+    "lint": "eslint app/ server/ --ext .ts,.tsx,.js,.jsx",
+    "app:install": "npm --prefix app run expo:install",
+    "app:android:build": "npm --prefix app run android:build",
+    "app:android:build:local": "npm --prefix app run android:build:local",
+    "server:install": "npm --prefix server run install:deps",
+    "deeplink:test": "cd app && npx uri-scheme open --android $URL"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.34.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.3.0",
+    "prettier": "3.6.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0"
+  }
+}
