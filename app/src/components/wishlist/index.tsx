@@ -6,7 +6,7 @@ import {WishListModal} from './wishlistModal';
 import {useCallback, useEffect, useMemo, useState} from 'react';
 import normalize, {loop} from '../../utils/functions';
 import * as Linking from 'expo-linking';
-import {IMAGES, NETWORK_IP, THEME} from '../../utils/constants';
+import {IMAGES, LOCALHOST, NETWORK_IP, THEME} from '../../utils/constants';
 import {Button} from '../button';
 import {Avatar} from '../avatar';
 
@@ -38,7 +38,7 @@ export const WishList = () => {
   useEffect(() => {
     if (url) {
       const {queryParams} = Linking.parse(url);
-      if (queryParams?.url && !queryParams?.url.includes(NETWORK_IP)) {
+      if (queryParams?.url && !queryParams?.url.includes(NETWORK_IP) && !queryParams?.url.includes(LOCALHOST)) {
         setOpen(true);
         setText(
           Array.isArray(queryParams.url) ? queryParams.url[0] : queryParams.url,

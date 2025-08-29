@@ -10,7 +10,7 @@
     "android": "npx expo run:android",
     "ios": "npx expo run:ios",
     "web": "npx expo start --web",
-    "expo:install": "npx expo install",
+    "expo:install": "npm install",
     "android:build": "eas build --platform android --profile development",
     "android:build:local": "eas build --platform android --profile development --local"
   },

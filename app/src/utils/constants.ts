@@ -1,4 +1,5 @@
 export const NETWORK_IP = '192.168.1.5';
+export const LOCALHOST = '127.0.0.1';
 export const PORT = '3000';
 export const THEME = {
   primary: '#72b354',

@@ -98,6 +98,82 @@ URL="myapp://wishlist?item=New%20Product%20%26%20Price%3D500" npm run deeplink:t
 ```
 > ⚠️ Ensure the URL is properly encoded to avoid errors when launching the deep link.
 
+## Engineering tradeoffs & risks
+
+ **Objective**
+
+Select a storage solution that meets the following requirements:
+
+- Persistence
+- Migration support
+- Structured data storage
+- Reliability
+
+---
+
+## **Storage Options Considered**
+
+### **1. AsyncStorage**
+
+**Trade-offs:**
+- Easy to implement
+- Lightweight
+- Supported by Expo
+
+**Risks / Limitations:**
+- No proper schema structure
+- Suitable only for small datasets
+- Migration not supported (manual migration possible but not recommended for large datasets)
+- Not secure
+
+---
+
+### **2. MMKV**
+
+**Trade-offs:**
+- Easy to implement
+- Lightweight
+- Secure (encryption support)
+- High performance
+
+**Risks / Limitations:**
+- No proper schema structure
+- Suitable only for small datasets
+- Migration not supported (manual migration possible but not ideal for large datasets)
+- Requires Expo prebuild for use
+
+---
+
+### **3. WatermelonDB**
+
+**Trade-offs:**
+- Provides proper schema structure (relational database)
+- Handles large datasets efficiently
+- Built-in migration support
+- High performance
+
+**Risks / Limitations:**
+- Setup complexity higher compared to AsyncStorage or MMKV
+- Not secure (encryption not built-in; current project does not require sensitive data storage)
+- Requires Expo prebuild for use
+
+---
+
+## **Conclusion**
+
+For the current project requirements, **WatermelonDB** was chosen due to:
+
+- Structured schema support
+- Migration support
+- High performance for large datasets
+
+> **Note:**  
+> For a full-fledged application, a combination of **WatermelonDB** (for relational data), **MMKV** (for secure/sensitive data), and **Redux** (for global state management) would be ideal.  
+
+Global state management was not implemented in this project due to its small scope, to avoid extra boilerplate, and time constraints.
+
+---
+
 ## AI Usage Disclosure
 
 Some portions of this project were assisted by AI tools, for:
